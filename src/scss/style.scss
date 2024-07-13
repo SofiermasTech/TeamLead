@@ -1,0 +1,12 @@
+@import  'normalize', 'fonts',  'global', 'utils', 'mixin', 'media', 'variables';
+
+
+@import 'components/link-buy';
+@import 'components/sticker';
+
+@import 'blocks/intro';
+@import 'blocks/ingredients';
+@import 'blocks/reviews';
+@import 'blocks/promo';
+@import 'blocks/order';
+@import 'blocks/footer';

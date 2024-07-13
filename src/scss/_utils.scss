@@ -1,0 +1,125 @@
+@import 'mixin', 'media';
+
+.container {
+   max-width: 1222px;
+   padding-inline: var(--padding-content-inline);
+   margin-inline: auto;
+
+   @include desktop-bottom {
+      max-width: 960px;
+   }
+
+   @include tablet {
+      max-width: 720px;
+   }
+
+   @include tablet-bottom {
+      width: 100%;
+      box-sizing: border-box;
+   }
+}
+
+.visually-hidden {
+   position: absolute !important;
+   margin: 0 !important;
+   padding: 0 !important;
+   width: 1px !important;
+   height: 1px !important;
+   white-space: nowrap !important;
+   -webkit-clip-path: inset(100%) !important;
+   clip-path: inset(100%) !important;
+   clip: rect(0 0 0 0) !important;
+   overflow: hidden !important;
+}
+
+.title,
+.subtitle {
+   font-weight: 800;
+   margin: 0;
+   vertical-align: middle;
+   text-align: left;
+   color: inherit;
+   transition: 0.8s
+}
+
+.subtitle {
+   @include fluid-text(24, 18);
+   font-weight: 400;
+
+   @include mobile {
+      line-height: 1.35;
+   }
+}
+
+.title {
+   @include fluid-text(60, 32);
+}
+
+.btn {
+   width: 100%;
+   margin-top: 20px;
+   border: none;
+   border-radius: var(--border-radius-small);
+   background-color: var(--color-accent-dark);
+   padding: 16px 20px;
+   color: var(--color-white);
+   overflow: hidden;
+   position: relative;
+}
+
+.btn::after {
+   content: '';
+   display: block;
+   position: absolute;
+   height: 300%;
+   width: 150%;
+   top: 0;
+   left: -100%;
+   background: rgba(255, 255, 255, 0.8);
+   border-radius: 100%;
+   -webkit-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   animation: btn-blick 4s linear infinite;
+}
+
+.input {
+   width: 100%;
+   padding: 10px 20px;
+   box-sizing: border-box;
+   border-radius: var(--border-radius-small);
+   border: none;
+   background-color: var(--color-white);
+}
+
+.input::placeholder {
+   font-size: 14px;
+   opacity: 1;
+   transition: opacity 0.5s ease;
+}
+
+.input:focus::placeholder {
+   opacity: 0;
+   transition: opacity 0.5s ease;
+}
+
+input:focus {
+   outline: 2px solid var(--color-accent-dark);
+}
+
+input:focus~label,
+input:valid~label {
+   opacity: 1;
+}
+
+@keyframes btn-blick {
+   20% {
+      opacity: 0;
+      transform: scale(2.5);
+   }
+
+   100% {
+      opacity: 0;
+      transform: scale(2.5);
+   }
+}

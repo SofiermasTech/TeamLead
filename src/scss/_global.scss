@@ -1,0 +1,54 @@
+body {
+   font-family: var(--text-font-family-base);
+   font-size: var(--text-body-size);
+   color: var(--color-base-text);
+   line-height: 1.3;
+   min-width: 375px;
+   height: 100%;
+   width: 100%;
+   background-color: var(--color-white);
+}
+
+a,
+a:visited {
+   text-decoration: none;
+   transition: 0.3s;
+}
+
+a:hover {
+   cursor: pointer;
+   color: var(--color-base-text);
+   background-color: var(--color-accent-light);
+}
+
+
+button:hover {
+   opacity: 0.8;
+   transition: 0.3s;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+   appearance: none;
+   -moz-appearance: textfield;
+}
+
+.page {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+}
+
+.main {
+   flex-grow: 1;
+   width: 100%;
+}

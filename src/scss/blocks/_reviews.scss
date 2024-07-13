@@ -1,0 +1,95 @@
+.reviews {
+   padding-block: var(--padding-section);
+
+   &__title {
+      margin-bottom: 12px;
+   }
+
+   &__cards {
+      width: 100%;
+      overflow: hidden;
+      margin-block: 30px;
+   }
+
+   &__cards-wrapper {
+      display: flex;
+      justify-content: space-around;
+      column-gap: 40px;
+      padding: 25px;
+
+      @include desktop-bottom {
+         scroll-snap-type: x mandatory;
+         overflow-x: scroll;
+         padding-inline: 3px;
+      }
+
+      @include tablet-bottom {
+         column-gap: 20px;
+      }
+
+      &::-webkit-scrollbar {
+         width: 10px;
+         height: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background: linear-gradient(to bottom right, #ffca0c 0%, #d3a600 100%);
+         border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+         background-color: #ddd;
+         border: 1px solid #ccc;
+         border-radius: 10px;
+      }
+   }
+
+   &__card {
+      padding: 30px 20px 50px 30px;
+      border-radius: var(--border-radius-large);
+      box-shadow: 0px 0px 15px 2px rgba($color: #dcafef, $alpha: 0.2);
+      max-width: 310px;
+      flex-shrink: 0;
+      transition: 0.2s;
+
+      @include hover {
+         transform: scale(1.03);
+      }
+
+      &.card-other {
+         background-color: var(--color-accent-light);
+         ;
+
+         & .reviews__card-img {
+            background-color: var(--color-white);
+         }
+      }
+   }
+
+   &__card-img {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      background-color: var(--color-accent-light);
+      ;
+      padding: 20px 24px;
+      text-align: center;
+      color: var(--color-accent-dark);
+
+      & svg {
+         width: 80%;
+         height: 80%;
+      }
+   }
+
+   &__card-name {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: 700;
+   }
+
+   &__card-text {
+      word-wrap: break-word;
+   }
+}

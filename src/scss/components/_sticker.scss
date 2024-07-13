@@ -1,0 +1,48 @@
+.sticker {
+   width: 136px;
+   height: 130px;
+   border-radius: 24px;
+   background-color: #d3a600;
+   position: relative;
+   user-select: none;
+   animation: scale-btn 2s linear infinite alternate;
+
+   &:before,
+   &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 130px;
+      height: 130px;
+      background: inherit;
+      border-radius: 24px;
+       }
+
+   &:before {
+      transform: rotate(30deg);
+      animation: rotate-elm 13s linear infinite alternate;
+   }
+
+   &:after {
+      transform: rotate(60deg);
+      animation: rotate-elm 13s linear infinite alternate-reverse;
+
+   }
+}
+
+@keyframes rotate-elm {
+   100% {
+      transform: rotate(359deg);
+   }
+}
+
+@keyframes scale-btn {
+   0% {
+      scale: 0.9;
+   }
+
+   100% {
+      scale: 1.1;
+   }
+}

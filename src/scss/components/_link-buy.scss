@@ -1,0 +1,29 @@
+.link-buy {
+   display: inline-block;
+    font-weight: 500;
+   font-size: 20px;
+   line-height: 1.5;
+   text-align: center;
+   padding: 20px 55px 16px;
+   background-color: var(--color-accent-dark);
+   color: var(--color-white);
+   border-radius: var(--border-radius-small);
+   overflow: hidden;
+   position: relative;
+}
+
+.link-buy::after {
+   content: '';
+   display: block;
+   position: absolute;
+   height: 300%;
+   width: 150%;
+   top: 0;
+   left: -100%;
+   background: rgba(255, 255, 255, 0.8);
+   border-radius: 100%;
+   -webkit-transform: scale(0);
+   -ms-transform: scale(0);
+   transform: scale(0);
+   animation: btn-blick 4s linear infinite;
+}
